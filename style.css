@@ -13,6 +13,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
+    overflow: hidden; /* Убираем скроллинг */
 }
 
 .container {
@@ -33,7 +34,7 @@ body {
 
 .coin {
     width: auto;
-    height: 50%; /* Монета занимает 40% высоты экрана */
+    height: 50%; /* Монета занимает 50% высоты экрана */
     max-height: 50vh; /* Ограничиваем максимальную высоту монеты */
     transition: transform 0.1s ease;
     cursor: pointer;
