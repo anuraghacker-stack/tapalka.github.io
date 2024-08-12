@@ -8,9 +8,11 @@ tg.MainButton.show();
 function animateCoin() {
     const coin = document.getElementById('coin');
 
+    // Используем requestAnimationFrame для добавления класса 'active'
     requestAnimationFrame(() => {
         coin.classList.add('active');
-
+        
+        // Удаляем класс 'active' после завершения анимации
         setTimeout(() => {
             coin.classList.remove('active');
         }, 100); // Время должно соответствовать времени анимации в CSS
@@ -20,23 +22,21 @@ function animateCoin() {
 // Логика для обработки нажатий на монету
 let count = 0;
 const coinElement = document.getElementById('coin');
-coinElement.addEventListener('click', function() {
+
+function handleClick() {
     count++;
     document.getElementById('click-count').textContent = count;
 
+    // Запуск анимации
     animateCoin();
 
+    // Отправка данных в Telegram
     tg.sendData(JSON.stringify({ clicks: count }));
-});
+}
 
-coinElement.addEventListener('touchend', function() {
-    count++;
-    document.getElementById('click-count').textContent = count;
-
-    animateCoin();
-
-    tg.sendData(JSON.stringify({ clicks: count }));
-});
+// Добавление обработчиков событий
+coinElement.addEventListener('click', handleClick);
+coinElement.addEventListener('touchend', handleClick); // Поддержка touchend для мобильных устройств
 
 // Обработка события нажатия на главную кнопку Telegram
 tg.onEvent('mainButtonClicked', () => {
