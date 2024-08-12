@@ -38,10 +38,8 @@ body {
     max-height: 50vh; /* Ограничиваем максимальную высоту монеты */
     transition: transform 0.1s ease;
     cursor: pointer;
-    will-change: transform; /* Оптимизация для анимации */
 }
 
-/* Анимация уменьшения монеты при клике */
-.coin:active {
+.coin.active {
     transform: scale(0.9);
 }
