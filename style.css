@@ -27,14 +27,14 @@ body {
 
 .counter {
     font-family: 'Ramona', sans-serif;
-    font-size: 54px; /* Уменьшен размер шрифта */
+    font-size: 60px; /* Уменьшен размер шрифта */
     margin-bottom: 10px;
 }
 
 .coin {
     width: auto;
-    height: 50%; /* Монета занимает 40% высоты экрана */
-    max-height: 50vh; /* Ограничиваем максимальную высоту монеты */
+    height: 60%; /* Монета занимает 40% высоты экрана */
+    max-height: 60vh; /* Ограничиваем максимальную высоту монеты */
     transition: transform 0.1s ease;
     cursor: pointer;
 }
