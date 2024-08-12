@@ -1,34 +1,38 @@
 // Инициализация Telegram Web App
 const tg = window.Telegram.WebApp;
 
-// Показываем кнопку закрытия веб-приложения в Telegram
+// Показ главной кнопки Telegram
 tg.MainButton.show();
 
-// Логика нажатия на монету
-let count = 0;
-document.getElementById('coin').addEventListener('click', function() {
+// Функция для обновления счётчика кликов и отправки данных в Telegram
+function updateClickCount() {
     count++;
     document.getElementById('click-count').textContent = count;
 
-    // Отправка данных в Telegram (например, текущий счет)
+    // Отправка данных в Telegram (например, текущий счёт)
     tg.sendData(JSON.stringify({ clicks: count }));
-});
+}
 
-// Событие, которое срабатывает, когда приложение запускается
+// Логика для обработки нажатий на монету
+let count = 0;
+document.getElementById('coin').addEventListener('click', updateClickCount);
+
+// Обработка события нажатия на главную кнопку в Telegram
 tg.onEvent('mainButtonClicked', () => {
-    // Можно реализовать логику, например, отправить данные и закрыть мини-приложение
+    // Реализация логики, например, отправка данных и закрытие мини-приложения
+    tg.sendData(JSON.stringify({ clicks: count, message: "Closing the app" }));
     tg.close();
 });
 
-// Открытие клавиатуры и установка цвета главной кнопки
+// Настройка параметров главной кнопки
 tg.MainButton.setParams({
     text: "Закрыть приложение",
     color: "#FF6B00"
 });
 
-// Функция, чтобы настроить приложение в момент запуска
+// Функция для подготовки приложения при его загрузке
 function setupApp() {
-    tg.ready(); // Подготовка приложения
+    tg.ready(); // Готовность приложения к работе
 }
 
 // Инициализация приложения при загрузке страницы
