@@ -33,8 +33,8 @@ body {
 
 .coin {
     width: auto;
-    height: 70%; /* Монета занимает 70% высоты экрана */
-    max-height: 70vh; /* Ограничиваем максимальную высоту монеты */
+    height: 50%; /* Монета занимает 70% высоты экрана */
+    max-height: 50vh; /* Ограничиваем максимальную высоту монеты */
     transition: transform 0.1s ease;
     cursor: pointer;
 }
