@@ -8,18 +8,13 @@ tg.MainButton.show();
 function animateCoin() {
     const coin = document.getElementById('coin');
 
-    // Удаляем класс 'active' перед его добавлением, чтобы сбросить анимацию
-    coin.classList.remove('active');
+    // Добавляем класс 'active' для запуска анимации
+    coin.classList.add('active');
 
-    // Используем setTimeout для надежного добавления и удаления класса
-    setTimeout(() => {
-        coin.classList.add('active');
-    }, 0);
-
-    // Удаляем класс 'active' после завершения анимации
+    // Удаляем класс 'active' через 100ms, чтобы вернуть монетку в исходное положение
     setTimeout(() => {
         coin.classList.remove('active');
-    }, 100); // Время 100ms соответствует времени анимации
+    }, 100); // Время должно соответствовать времени анимации в CSS
 }
 
 // Логика для обработки нажатий на монету
