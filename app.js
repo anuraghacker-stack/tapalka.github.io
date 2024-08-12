@@ -8,25 +8,33 @@ tg.MainButton.show();
 function animateCoin() {
     const coin = document.getElementById('coin');
 
-    // Добавляем класс 'active' для запуска анимации
-    coin.classList.add('active');
+    requestAnimationFrame(() => {
+        coin.classList.add('active');
 
-    // Удаляем класс 'active' через 100ms, чтобы вернуть монетку в исходное положение
-    setTimeout(() => {
-        coin.classList.remove('active');
-    }, 100); // Время должно соответствовать времени анимации в CSS
+        setTimeout(() => {
+            coin.classList.remove('active');
+        }, 100); // Время должно соответствовать времени анимации в CSS
+    });
 }
 
 // Логика для обработки нажатий на монету
 let count = 0;
-document.getElementById('coin').addEventListener('click', function() {
+const coinElement = document.getElementById('coin');
+coinElement.addEventListener('click', function() {
     count++;
     document.getElementById('click-count').textContent = count;
 
-    // Запуск анимации
     animateCoin();
 
-    // Отправка данных в Telegram
+    tg.sendData(JSON.stringify({ clicks: count }));
+});
+
+coinElement.addEventListener('touchend', function() {
+    count++;
+    document.getElementById('click-count').textContent = count;
+
+    animateCoin();
+
     tg.sendData(JSON.stringify({ clicks: count }));
 });
 
