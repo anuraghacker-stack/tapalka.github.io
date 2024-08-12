@@ -7,7 +7,7 @@
 
 body {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center; /* Центровка контейнера по горизонтали */
     align-items: center;
     height: 100vh;
     margin: 0;
@@ -21,20 +21,20 @@ body {
     justify-content: center;
     align-items: center;
     height: 100%;
-    padding-right: 50px; /* Отступ справа для смещения контейнера */
+    margin-left: 20px; /* Отступ слева для смещения контейнера вправо */
     text-align: center;
 }
 
 .counter {
     font-family: 'Ramona', sans-serif;
-    font-size: 60px; /* Уменьшен размер шрифта */
+    font-size: 50px; /* Уменьшен размер шрифта */
     margin-bottom: 10px;
 }
 
 .coin {
     width: auto;
-    height: 60%; /* Монета занимает 40% высоты экрана */
-    max-height: 60vh; /* Ограничиваем максимальную высоту монеты */
+    height: 50%; /* Монета занимает 40% высоты экрана */
+    max-height: 50vh; /* Ограничиваем максимальную высоту монеты */
     transition: transform 0.1s ease;
     cursor: pointer;
 }
