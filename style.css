@@ -21,7 +21,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100%;
-    padding-right: 20px; /* Отступ справа для смещения контейнера */
+    padding-right: 50px; /* Отступ справа для смещения контейнера */
     text-align: center;
 }
 
