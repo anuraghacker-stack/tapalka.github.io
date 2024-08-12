@@ -7,13 +7,13 @@
 
 body {
     display: flex;
-    justify-content: center; /* Центровка контейнера по горизонтали */
+    justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-    overflow: hidden; /* Убираем скроллинг */
+    overflow: hidden;
 }
 
 .container {
@@ -22,25 +22,24 @@ body {
     justify-content: center;
     align-items: center;
     height: 100%;
-    margin-left: 20px; /* Отступ слева для смещения контейнера вправо */
     text-align: center;
+    margin-left: 20px;
 }
 
 .counter {
     font-family: 'Ramona', sans-serif;
-    font-size: 50px; /* Уменьшен размер шрифта */
+    font-size: 50px;
     margin-bottom: 10px;
 }
 
 .coin {
     width: auto;
-    height: 50%; /* Монета занимает 50% высоты экрана */
-    max-height: 50vh; /* Ограничиваем максимальную высоту монеты */
-    transition: transform 0.1s ease;
+    height: 50%;
+    max-height: 50vh;
+    transition: transform 0.1s ease; /* Плавный переход трансформации */
     cursor: pointer;
 }
 
-/* Анимация уменьшения монеты при клике */
 .coin.active {
-    transform: scale(0.9);
+    transform: scale(0.9); /* Уменьшение монеты */
 }
