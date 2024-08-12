@@ -36,10 +36,11 @@ body {
     width: auto;
     height: 50%;
     max-height: 50vh;
-    transition: transform 0.1s ease; /* Плавный переход трансформации */
+    transition: transform 0.1s ease;
     cursor: pointer;
+    will-change: transform; /* Оптимизация анимаций */
 }
 
 .coin.active {
-    transform: scale(0.9); /* Уменьшение монеты */
+    transform: scale(0.9);
 }
