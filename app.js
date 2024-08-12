@@ -7,10 +7,14 @@ tg.MainButton.show();
 // Функция для управления анимацией клика
 function animateCoin() {
     const coin = document.getElementById('coin');
-    coin.classList.add('active');
+
+    // Удаляем класс 'active' перед его добавлением, чтобы сбросить анимацию
+    coin.classList.remove('active');
+
+    // Используем setTimeout с нулевой задержкой для надежного добавления класса
     setTimeout(() => {
-        coin.classList.remove('active');
-    }, 100); // Длительность анимации в миллисекундах
+        coin.classList.add('active');
+    }, 0);
 }
 
 // Логика для обработки нажатий на монету
